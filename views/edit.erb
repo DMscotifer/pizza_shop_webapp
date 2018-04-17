@@ -6,7 +6,8 @@
   <input type="text" id="last_name" name="last_name" value="<%= @order.last_name%>">
 
   <label for="topping">Topping:</label>
-  <select name="topping" id="topping" value="<%= @order.topping%>">
+  <select name="topping" id="topping" value="<%=@order.topping%>">
+    <option value="<%=@order.topping%>"><%=@order.topping%></option>
     <option value="Hawaiian">Hawaiian</option>
     <option value="Pepperoni">Pepperoni</option>
     <option value="Veg Supreme">Veg Supreme</option>
