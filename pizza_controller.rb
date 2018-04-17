@@ -29,11 +29,20 @@ post "/pizza-orders" do
 end
 
 # edit
-post "/pizza-orders/:id/edit" do
+get "/pizza-orders/:id/edit" do
   @order = PizzaOrder.find(params[:id])
   erb(:edit)
 end
+
 # update
+post "/pizza-orders/:id/edit" do
+  # create a new pizza object of the params
+  @order = PizzaOrder.new(params)
+  # call update on the new object
+  @order.update()
+  redirect to "/pizza-orders"
+end
+
 
 # destroy
 post "/pizza-orders/:id/delete" do
